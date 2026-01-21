@@ -24,61 +24,44 @@
 
     <!-- Navigation -->
     <nav class="glass-panel">
-        <div class="logo"><i class="fa-solid fa-leaf"></i>Agro<span>G</span>uard</div>
-        <ul class="nav-links">
-            <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
-            <li><a href="#" onclick="showSection('seed-sure')">Seed Sure</a></li>
-            <li><a href="#" onclick="showSection('vet-connect')">My AgriDr.</a></li>
-            <li><a href="#" onclick="showSection('market')">Farm to Market</a></li>
-            <li><a href="#" onclick="showSection('agromall')">AgroMall</a></li>
-            <li><a href="#" onclick="showSection('farm-manager')">Farm Manager</a></li>
-            <li><a href="#" onclick="showSection('finances')">Finances</a></li>
-            <li><a href="#" onclick="showSection('profile')">Profile</a></li>
-        </ul>
-        <button class="btn btn-primary" onclick="showSection('plant-doctor')">
-            <i class="fa-solid fa-stethoscope"></i> Plant Doctor
-        </button>
+        <div class="nav-left-group">
+            <div class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="logo" onclick="showSection('home')"><i class="fa-solid fa-leaf"></i>Agro<span>G</span>uard</div>
+
+            <ul class="desktop-nav">
+                <li><a href="#" class="active" data-section="home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" data-section="seed-sure" onclick="showSection('seed-sure')">Seed Sure</a></li>
+                <li><a href="#" data-section="vet-connect" onclick="showSection('vet-connect')">My AgriDr.</a></li>
+                <li><a href="#" data-section="market" onclick="showSection('market')">Market</a></li>
+                <li><a href="#" data-section="agromall" onclick="showSection('agromall')">Mall</a></li>
+                <li><a href="#" data-section="farm-manager" onclick="showSection('farm-manager')">Manager</a></li>
+                <li><a href="#" data-section="finances" onclick="showSection('finances')">Finances</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-container" id="nav-container">
+            <ul class="nav-links">
+                <li><a href="#" class="active" onclick="showSection('home'); toggleMenu()">Home</a></li>
+                <li><a href="#" onclick="showSection('seed-sure'); toggleMenu()">Seed Sure</a></li>
+                <li><a href="#" onclick="showSection('vet-connect'); toggleMenu()">My AgriDr.</a></li>
+                <li><a href="#" onclick="showSection('market'); toggleMenu()">Farm to Market</a></li>
+                <li><a href="#" onclick="showSection('agromall'); toggleMenu()">AgroMall</a></li>
+                <li><a href="#" onclick="showSection('farm-manager'); toggleMenu()">Farm Manager</a></li>
+                <li><a href="#" onclick="showSection('finances'); toggleMenu()">Finances</a></li>
+                <li><a href="#" onclick="showSection('profile'); toggleMenu()">Profile</a></li>
+            </ul>
+            <button class="btn btn-primary" onclick="showSection('plant-doctor'); toggleMenu()"
+                style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                <i class="fa-solid fa-stethoscope"></i> Plant Doctor
+            </button>
+        </div>
     </nav>
 
-    <!-- Side Navigation Menu (Global) -->
-    <div class="side-nav-home glass-panel">
-        <a href="#" onclick="showSection('home')" title="Home">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
-        </a>
-        <a href="#" onclick="showSection('seed-sure')" title="Seed Sure">
-            <i class="fa-solid fa-seedling"></i>
-            <span>Seed Sure</span>
-        </a>
-        <a href="#" onclick="showSection('vet-connect')" title="Vet Connect">
-            <i class="fa-solid fa-cow"></i>
-            <span>Vet Connect</span>
-        </a>
-        <a href="#" onclick="showSection('market')" title="Farm Market">
-            <i class="fa-solid fa-shop"></i>
-            <span>Farm Market</span>
-        </a>
-        <a href="#" onclick="showSection('plant-doctor')" title="Plant Doctor">
-            <i class="fa-solid fa-user-doctor"></i>
-            <span>Plant Doctor</span>
-        </a>
-        <a href="#" onclick="showSection('agromall')" title="AgroMall">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>AgroMall</span>
-        </a>
-        <a href="#" onclick="showSection('farm-manager')" title="Farm Manager">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Manager</span>
-        </a>
-        <a href="#" onclick="showSection('finances')" title="Finances">
-            <i class="fa-solid fa-wallet"></i>
-            <span>Finances</span>
-        </a>
-        <a href="#" onclick="showSection('profile')" title="Profile">
-            <i class="fa-solid fa-user"></i>
-            <span>Profile</span>
-        </a>
-    </div>
 
     <main class="container">
 
@@ -156,14 +139,15 @@
         <!-- SEED SURE SECTION -->
         <section id="seed-sure" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
             <div class="glass-panel"
-                style="padding: 3rem; max-width: 900px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.8); background: #dcedc8; box-shadow: 0 20px 40px rgba(76, 175, 80, 0.1);">
-                <div style="text-align: center; margin-bottom: 3rem;">
+                style="padding: 2rem; max-width: 800px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.8); background: #dcedc8; box-shadow: 0 20px 40px rgba(76, 175, 80, 0.1);">
+                <div style="text-align: center; margin-bottom: 2rem;">
                     <div
-                        style="width: 80px; height: 80px; background: var(--primary-color); border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);">
-                        <i class="fa-solid fa-seedling" style="font-size: 2.5rem; color: white;"></i>
+                        style="width: 70px; height: 70px; background: var(--primary-color); border-radius: 18px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);">
+                        <i class="fa-solid fa-seedling" style="font-size: 2rem; color: white;"></i>
                     </div>
-                    <h2 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 0.5rem;">Seed Sure</h2>
-                    <p style="color: #666; max-width: 500px; margin: 0 auto;">Intelligent planting advice powered by
+                    <h2 style="font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 0.4rem;">Seed Sure</h2>
+                    <p style="color: #666; max-width: 450px; margin: 0 auto; font-size: 0.9rem;">Intelligent planting
+                        advice powered by
                         regional data and soil analysis.</p>
                 </div>
 
@@ -272,7 +256,7 @@
 
         <section id="vet-connect" class="section-view" style="background: #f8faf0; padding: 3rem 1rem;">
             <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
 
                 <!-- Health Dashboard -->
                 <div class="glass-panel"
@@ -371,20 +355,20 @@
 
                 <!-- Symptom Checker -->
                 <div class="glass-panel"
-                    style="padding: 1.5rem; background: #e8f5e9; border: 1px solid rgba(76, 175, 80, 0.2); display: flex; flex-direction: column;">
-                    <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-notes-medical" style="color: #4caf50;"></i>
+                    style="padding: 1rem; background: #e8f5e9; border: 1px solid rgba(76, 175, 80, 0.2); display: flex; flex-direction: column;">
+                    <h3 style="font-size: 0.9rem;"><i class="fa-solid fa-notes-medical" style="color: #4caf50;"></i>
                         Dr.B</h3>
-                    <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">Enter symptoms for instant advice.
+                    <p style="font-size: 0.7rem; color: #666; margin-bottom: 0.8rem;">Enter symptoms for instant advice.
                     </p>
-                    <div class="chat-interface" style="height: 320px;">
-                        <div id="vet-chat-messages" class="chat-messages" style="height: 230px; font-size: 0.85rem;">
+                    <div class="chat-interface" style="height: 300px;">
+                        <div id="vet-chat-messages" class="chat-messages" style="height: 210px; font-size: 0.75rem;">
                             <div class="message ai">Hello! I'm Dr. B. How is your animal feeling?</div>
                         </div>
-                        <form class="chat-input-area" onsubmit="handleVetChat(event)">
+                        <form class="chat-input-area" onsubmit="handleVetChat(event)" style="padding: 0.5rem;">
                             <input type="text" id="vet-input" placeholder="Symptoms..." required
-                                style="padding: 0.6rem; font-size: 0.85rem;">
-                            <button type="submit" class="btn btn-primary" style="padding: 0.6rem;"><i
-                                    class="fa-solid fa-paper-plane"></i></button>
+                                style="padding: 0.5rem; font-size: 0.75rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 0.5rem;"><i
+                                    class="fa-solid fa-paper-plane" style="font-size: 0.8rem;"></i></button>
                         </form>
                     </div>
                 </div>
@@ -395,22 +379,26 @@
         <section id="plant-doctor" class="section-view" style="background: #f8faf0; padding: 4rem 1rem;">
             <div class="diagnosis-container">
                 <div class="glass-panel"
-                    style="padding: 3rem; background: #f1f8e9; border: 1px solid rgba(139, 195, 74, 0.2); max-width: 800px; margin: 0 auto;">
+                    style="padding: 2rem; background: #f1f8e9; border: 1px solid rgba(139, 195, 74, 0.2); max-width: 950px; margin: 0 auto;">
                     <i class="fa-solid fa-plant-wilt"
-                        style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                    <h2>Plant Doctor</h2>
-                    <p>Describe the symptoms on your plant leaves, stem, or fruit.</p>
+                        style="font-size: 3rem; color: var(--primary-color); margin-bottom: 0.6rem;"></i>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 0.3rem;">Plant Doctor</h2>
+                    <p style="margin-bottom: 1.2rem; color: #555; font-size: 0.8rem;">Describe the symptoms on your
+                        plant leaves, stem, or
+                        fruit.</p>
 
-                    <div class="chat-interface">
-                        <div id="plant-chat-messages" class="chat-messages">
-                            <div class="message ai">Hi there! I can help identify plant diseases. Describe the spots,
+                    <div class="chat-interface" style="max-width: 800px; height: 320px;">
+                        <div id="plant-chat-messages" class="chat-messages" style="padding: 0.5rem;">
+                            <div class="message ai"
+                                style="padding: 0.5rem 0.7rem; margin-bottom: 0.6rem; font-size: 0.8rem;">Hi there! I
+                                can help identify plant diseases. Describe the spots,
                                 color changes, or pests you see.</div>
                         </div>
-                        <form class="chat-input-area" onsubmit="handlePlantChat(event)">
-                            <input type="text" id="plant-input"
-                                placeholder="Describe symptoms e.g. yellow spots, holes in leaves, wilting..." required>
-                            <button type="submit" class="btn btn-primary"><i
-                                    class="fa-solid fa-paper-plane"></i></button>
+                        <form class="chat-input-area" onsubmit="handlePlantChat(event)" style="padding: 0.5rem;">
+                            <input type="text" id="plant-input" placeholder="Describe symptoms..." required
+                                style="padding: 0.5rem; font-size: 0.8rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 0.4rem 0.7rem;"><i
+                                    class="fa-solid fa-paper-plane" style="font-size: 0.8rem;"></i></button>
                         </form>
                     </div>
 
@@ -423,14 +411,14 @@
         <!-- FARM TO MARKET SECTION -->
         <section id="market" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
             <div class="glass-panel"
-                style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: #dcedc8; border: 1px solid rgba(139, 195, 74, 0.2);">
+                style="max-width: 900px; margin: 0 auto; padding: 1.5rem; background: #dcedc8; border: 1px solid rgba(139, 195, 74, 0.2);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                     <h2>Farm Market Interface</h2>
                     <button class="btn btn-primary" onclick="openProduceModal()"><i class="fa-solid fa-plus"></i> Post
                         Your Produce</button>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem;">
                     <!-- Market Item 1 -->
                     <div
                         style="border: 1px solid #c5e1a5; border-radius: 12px; padding: 1rem; background: #f9fbe7; transition: transform 0.3s ease; cursor: pointer;">
@@ -512,7 +500,7 @@
 
                 <!-- FARM TO HOME SECTION (New Feature) -->
                 <div class="glass-panel"
-                    style="max-width: 1000px; margin: 2rem auto 0; padding: 2rem; border-left: 5px solid var(--accent-color); background: #f1f8e9;">
+                    style="max-width: 900px; margin: 2rem auto 0; padding: 1.5rem; border-left: 5px solid var(--accent-color); background: #f1f8e9;">
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                         <h2 style="color: var(--primary-dark); display: flex; align-items: center; gap: 1rem;">
@@ -524,7 +512,7 @@
                         </h2>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
                         <!-- Customer Order Form -->
                         <div>
                             <h3 style="margin-bottom: 1rem; color: #333;">Place Home Order</h3>
@@ -726,20 +714,20 @@
         <section id="agromall" class="section-view" style="background: #e0f2f1; padding: 4rem 1rem;">
             <div class="glass-panel"
                 style="max-width: 1100px; margin: 0 auto; padding: 2rem; background: #b2dfdb; border: 1px solid rgba(0, 77, 64, 0.1);">
-                <div style="text-align: center; margin-bottom: 3rem;">
+                <div style="text-align: center; margin-bottom: 2rem;">
                     <h2
-                        style="color: var(--primary-dark); font-size: 2.2rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                        style="color: var(--primary-dark); font-size: 1.8rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
                         <i class="fa-solid fa-cart-shopping" style="color: var(--accent-color);"></i>
                         AgroMall: Buying Leads
                     </h2>
-                    <p style="color: #666; margin-top: 0.5rem;">Where buyers post their needs and farmers supply the
-                        solutions.</p>
+                    <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Where buyers post their needs and
+                        farmers supply the solutions.</p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                     <!-- Buyer Post Card -->
                     <div class="glass-panel"
-                        style="background: #ffffff; padding: 2rem; border: 1px solid rgba(0, 77, 64, 0.2); box-shadow: 0 4px 15px rgba(0, 77, 64, 0.05);">
+                        style="background: #ffffff; padding: 1.2rem; border: 1px solid rgba(0, 77, 64, 0.2); box-shadow: 0 4px 15px rgba(0, 77, 64, 0.05);">
                         <h3
                             style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; color: #333;">
                             <i class="fa-solid fa-pen-nib" style="color: var(--primary-color);"></i>
@@ -845,7 +833,7 @@
     <!-- FARM MANAGER SECTION (New Feature) -->
     <section id="farm-manager" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
         <div class="glass-panel"
-            style="max-width: 1100px; margin: 0 auto; padding: 2rem; background: #dcedc8; border: 1px solid rgba(46, 125, 50, 0.2);">
+            style="max-width: 950px; margin: 0 auto; padding: 1.5rem; background: #dcedc8; border: 1px solid rgba(46, 125, 50, 0.2);">
             <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-dark);">Farm Management Dashboard
             </h2>
 
@@ -1040,13 +1028,13 @@
     <!-- FINANCES SECTION (New Feature) -->
     <section id="finances" class="section-view" style="background: #e8f5e9; padding: 4rem 1rem;">
         <div class="glass-panel"
-            style="max-width: 1100px; margin: 0 auto; padding: 2rem; background: #c8e6c9; border: 1px solid rgba(46, 125, 50, 0.2);">
+            style="max-width: 950px; margin: 0 auto; padding: 1.5rem; background: #c8e6c9; border: 1px solid rgba(46, 125, 50, 0.2);">
             <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-dark);">Farm Finances & Budgeting
             </h2>
 
             <!-- Summary Cards -->
             <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 2rem;">
                 <div
                     style="background: #e8f5e9; padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #81c784;">
                     <i class="fa-solid fa-arrow-trend-up"
@@ -1163,13 +1151,13 @@
 
     <!-- PROFILE SECTION (New Feature) -->
     <section id="profile" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
-        <div class="container" style="max-width: 900px; padding-top: 2rem;">
+        <div class="container" style="max-width: 800px; padding-top: 2rem;">
             <div class="glass-panel"
-                style="padding: 3rem; text-align: center; background: #dcedc8; border: 1px solid rgba(76, 175, 80, 0.2);">
+                style="padding: 2rem; text-align: center; background: #dcedc8; border: 1px solid rgba(76, 175, 80, 0.2);">
                 <h2 style="margin-bottom: 1rem; color: var(--primary-dark);">Join the AgroGuard Community</h2>
                 <p style="color: #666; margin-bottom: 3rem;">Choose your account type to get started</p>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                     <!-- Farmer Account Card -->
                     <div style="background: #f1fcf1; padding: 2rem; border-radius: 16px; border: 2px solid #c8e6c9; transition: all 0.3s ease; cursor: pointer;"
                         onmouseover="this.style.borderColor='var(--primary-color)'; this.style.transform='translateY(-5px)'"

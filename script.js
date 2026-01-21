@@ -1,31 +1,57 @@
 const sectionOrder = ['home', 'seed-sure', 'vet-connect', 'market', 'plant-doctor', 'agromall', 'farm-manager', 'finances', 'profile'];
 let activeSectionId = 'home';
 
+// --- Navigation & Menu Logic ---
+function toggleMenu() {
+    const hamburger = document.getElementById('hamburger-btn');
+    const navContainer = document.getElementById('nav-container');
+    if (hamburger && navContainer) {
+        hamburger.classList.toggle('active');
+        navContainer.classList.toggle('active');
+    }
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const hamburger = document.getElementById('hamburger-btn');
+    const navContainer = document.getElementById('nav-container');
+    if (navContainer && navContainer.classList.contains('active')) {
+        if (!navContainer.contains(e.target) && !hamburger.contains(e.target)) {
+            toggleMenu();
+        }
+    }
+});
+
 function showSection(sectionId) {
     activeSectionId = sectionId;
 
-    // Hide all sections
+    // Remove active class from all sections
     document.querySelectorAll('.section-view').forEach(section => {
         section.classList.remove('active');
     });
 
-    // Show target section
+    // Show selected section
     const target = document.getElementById(sectionId);
     if (target) {
         target.classList.add('active');
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo(0, 0);
     }
 
-    // Update nav active states (Top and Side)
-    document.querySelectorAll('.nav-links a, .side-nav-home a').forEach(link => {
+    // Update active state in ALL nav links (drawer and desktop)
+    document.querySelectorAll('.nav-links a, .desktop-nav a').forEach(link => {
         link.classList.remove('active');
-        const onclickAttr = link.getAttribute('onclick');
-        if (onclickAttr && onclickAttr.includes(sectionId)) {
+
+        // Match by function call or data attribute
+        const isDrawerMatch = link.getAttribute('onclick') && link.getAttribute('onclick').includes(`'${sectionId}'`);
+        const isDesktopMatch = link.getAttribute('data-section') === sectionId;
+
+        if (isDrawerMatch || isDesktopMatch) {
             link.classList.add('active');
         }
     });
 
+    // Update floating navigation ordering (if applicable)
+    updateFloatingNavVisibility();
     // Update floating navigation buttons
     updateNavigationButtons();
 }
@@ -1808,4 +1834,20 @@ document.addEventListener('DOMContentLoaded', function () {
             event.target.classList.remove('active');
         }
     };
+
+    // --- Chicken AI Scroll Visibility Logic ---
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        const chicken = document.getElementById('chicken-ai');
+        if (!chicken) return;
+
+        // Hide assistant while scrolling
+        chicken.classList.add('scrolling');
+
+        // Clear existing timeout and set a new one to show after scroll stops
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            chicken.classList.remove('scrolling');
+        }, 300); // Reappear 300ms after scrolling stops
+    });
 });
