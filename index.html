@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroGuard - Smart Farming Assistant</title>
+    <title>FluxFrm - Smart Farming Assistant</title>
     <meta name="description"
         content="Your farmer-friendly AI companion for crop planning, livestock health, and market connections.">
 
@@ -24,43 +24,51 @@
 
     <!-- Navigation -->
     <nav class="glass-panel">
-        <div class="nav-left-group">
-            <div class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="logo" onclick="showSection('home')"><i class="fa-solid fa-leaf"></i>Flux<span>F</span>rm</div>
 
-            <div class="logo" onclick="showSection('home')"><i class="fa-solid fa-leaf"></i>Agro<span>G</span>uard</div>
-
-            <ul class="desktop-nav">
-                <li><a href="#" class="active" data-section="home" onclick="showSection('home')">Home</a></li>
-                <li><a href="#" data-section="seed-sure" onclick="showSection('seed-sure')">Seed Sure</a></li>
-                <li><a href="#" data-section="vet-connect" onclick="showSection('vet-connect')">My AgriDr.</a></li>
-                <li><a href="#" data-section="market" onclick="showSection('market')">Market</a></li>
-                <li><a href="#" data-section="agromall" onclick="showSection('agromall')">Mall</a></li>
-                <li><a href="#" data-section="farm-manager" onclick="showSection('farm-manager')">Manager</a></li>
-                <li><a href="#" data-section="finances" onclick="showSection('finances')">Finances</a></li>
-            </ul>
-        </div>
-
-        <div class="nav-container" id="nav-container">
-            <ul class="nav-links">
-                <li><a href="#" class="active" onclick="showSection('home'); toggleMenu()">Home</a></li>
-                <li><a href="#" onclick="showSection('seed-sure'); toggleMenu()">Seed Sure</a></li>
-                <li><a href="#" onclick="showSection('vet-connect'); toggleMenu()">My AgriDr.</a></li>
-                <li><a href="#" onclick="showSection('market'); toggleMenu()">Farm to Market</a></li>
-                <li><a href="#" onclick="showSection('agromall'); toggleMenu()">AgroMall</a></li>
-                <li><a href="#" onclick="showSection('farm-manager'); toggleMenu()">Farm Manager</a></li>
-                <li><a href="#" onclick="showSection('finances'); toggleMenu()">Finances</a></li>
-                <li><a href="#" onclick="showSection('profile'); toggleMenu()">Profile</a></li>
-            </ul>
-            <button class="btn btn-primary" onclick="showSection('plant-doctor'); toggleMenu()"
-                style="padding: 0.5rem 1rem; font-size: 0.85rem;">
-                <i class="fa-solid fa-stethoscope"></i> Plant Doctor
+        <!-- Profile / Social Icons - Right Side -->
+        <div class="nav-right">
+            <button class="btn btn-primary btn-sm" onclick="showSection('plant-doctor')" id="top-btn-doctor">
+                <i class="fa-solid fa-stethoscope"></i> <span class="hide-mobile">Plant Doctor</span>
             </button>
         </div>
     </nav>
+
+    <!-- App Navigation (Sidebar on Desktop, Bottom Nav on Mobile) -->
+    <div class="app-menu" id="app-menu">
+        <a href="javascript:void(0)" class="active" onclick="showSection('home')" data-section="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="javascript:void(0)" onclick="showSection('seed-sure')" data-section="seed-sure">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Seeds</span>
+        </a>
+        <a href="javascript:void(0)" onclick="showSection('vet-connect')" data-section="vet-connect">
+            <i class="fa-solid fa-cow"></i>
+            <span>Vet</span>
+        </a>
+        <a href="javascript:void(0)" onclick="showSection('market')" data-section="market">
+            <i class="fa-solid fa-shop"></i>
+            <span>Market</span>
+        </a>
+        <a href="javascript:void(0)" onclick="showSection('agromall')" data-section="agromall">
+            <i class="fa-solid fa-store"></i>
+            <span>Mall</span>
+        </a>
+        <a href="javascript:void(0)" onclick="showSection('farm-manager')" data-section="farm-manager">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Tasks</span>
+        </a>
+        <a href="javascript:void(0)" onclick="showSection('finances')" data-section="finances">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Cash</span>
+        </a>
+        <a href="javascript:void(0)" onclick="showSection('profile')" data-section="profile">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </div>
 
 
     <main class="container">
@@ -1154,7 +1162,7 @@
         <div class="container" style="max-width: 800px; padding-top: 2rem;">
             <div class="glass-panel"
                 style="padding: 2rem; text-align: center; background: #dcedc8; border: 1px solid rgba(76, 175, 80, 0.2);">
-                <h2 style="margin-bottom: 1rem; color: var(--primary-dark);">Join the AgroGuard Community</h2>
+                <h2 style="margin-bottom: 1rem; color: var(--primary-dark);">Join the FluxFrm Community</h2>
                 <p style="color: #666; margin-bottom: 3rem;">Choose your account type to get started</p>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
@@ -1213,7 +1221,7 @@
 
     <!-- Footer -->
     <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); margin-top: 2rem;">
-        <p>&copy; 2026 AgroGuard AI. Designed for Farmers.</p>
+        <p>&copy; 2026 FluxFrm AI. Designed for Farmers.</p>
     </footer>
 
     <!-- Contact Modal -->
@@ -1892,7 +1900,7 @@
                 style="transform: scale(1.1);">
         </div>
         <div id="chicken-bubble" class="chicken-speech-bubble">
-            <p id="chicken-text">Cluck! Click me to learn about AgroGuard!</p>
+            <p id="chicken-text">Cluck! Click me to learn about FluxFrm!</p>
         </div>
     </div>
 

@@ -121,157 +121,171 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 2rem;
+    padding: 0.35rem 1.5rem;
     position: sticky;
     top: 0;
     z-index: 4000;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.nav-left-group {
+.nav-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-}
-
-.logo {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    z-index: 4002;
-    cursor: pointer;
-    margin-right: 1rem;
-}
-
-.logo span {
-    color: var(--text-main);
-}
-
-/* Horizontal Desktop Nav */
-.desktop-nav {
-    display: flex;
     gap: 1.2rem;
-    list-style: none;
 }
 
-.desktop-nav li a {
+.profile-icon {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}
+
+/* App Menu (Sidebar Rail) */
+.app-menu {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 75px;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 1.2rem;
+    z-index: 3900;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.app-menu:hover {
+    width: 160px;
+    border-radius: 20px;
+}
+
+.app-menu a {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 600;
     transition: all 0.3s ease;
-    padding: 0.4rem 0.2rem;
+    padding: 0.5rem 0;
     position: relative;
+    overflow: hidden;
 }
 
-.desktop-nav li a:hover,
-.desktop-nav li a.active {
+.app-menu a i {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.app-menu a span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.app-menu:hover a span {
+    opacity: 1;
+}
+
+.app-menu a.active {
     color: var(--primary-color);
 }
 
-.desktop-nav li a::after {
+.app-menu a:hover:not(.active) {
+    color: var(--primary-light);
+}
+
+.app-menu a.active::before {
     content: '';
     position: absolute;
-    bottom: -2px;
     left: 0;
-    width: 0;
-    height: 2px;
+    width: 4px;
+    height: 60%;
     background: var(--primary-color);
-    transition: width 0.3s ease;
+    border-radius: 0 4px 4px 0;
 }
 
-.desktop-nav li a:hover::after,
-.desktop-nav li a.active::after {
-    width: 100%;
+/* Content Adjustment for Sidebar */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem 0 6rem;
+    /* Left padding for sidebar spacer */
+    transition: padding 0.4s;
 }
 
-@media (max-width: 1100px) {
-    .desktop-nav {
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .app-menu {
+        left: 0;
+        top: auto;
+        bottom: 0;
+        transform: none;
+        width: 100% !important;
+        height: 70px;
+        flex-direction: row;
+        border-radius: 0;
+        padding: 0 0.5rem;
+        justify-content: flex-start;
+        /* For scrolling */
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        /* IE/Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        scroll-behavior: smooth;
+        box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .app-menu::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar for Chrome/Safari */
+    }
+
+    .app-menu a {
+        min-width: 65px;
+        /* Ensure links have a base width */
+        flex-shrink: 0;
+        gap: 2px;
+    }
+
+    .app-menu a span {
+        opacity: 1 !important;
+        font-size: 0.6rem;
+    }
+
+    .app-menu a.active::before {
         display: none;
     }
-}
 
-/* Hamburger Icon */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 4002;
-    padding: 10px;
-    transition: transform 0.3s ease;
-}
+    .app-menu a.active i {
+        transform: translateY(-5px);
+    }
 
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 3px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Hamburger Animation */
-.hamburger.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-20px);
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Nav Container (Drawer) */
-.nav-container {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 320px;
-    height: 100vh;
-    background: white;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    padding: 6rem 2rem 2rem;
-    gap: 2rem;
-    transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 4001;
-    overflow-y: auto;
-}
-
-.nav-container.active {
-    left: 0;
-}
-
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    list-style: none;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-    display: block;
-    padding: 0.5rem 0;
-}
-
-.nav-links li a:hover,
-.nav-links li a.active {
-    color: var(--primary-color);
-    transform: translateX(10px);
+    .hide-mobile {
+        display: none;
+    }
 }
 
 /* Main Content Area */
@@ -301,6 +315,60 @@ main {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto 2rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.4rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+        margin-right: 0;
+    }
+
+    .nav-container {
+        width: 190px;
+        top: 3.2rem;
+        left: -110%;
+    }
+
+    .nav-container.active {
+        left: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.85rem;
+    }
+
+    .section-view {
+        padding: 2.5rem 0.8rem !important;
+    }
+
+    .diagnosis-container .glass-panel {
+        padding: 1.2rem !important;
+    }
+
+    .chat-interface {
+        height: 380px !important;
+    }
+
+    .manager-grid,
+    .market-grid,
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
 }
 
 /* Feature Cards Grid */
@@ -950,8 +1018,9 @@ main {
 /* Chicken AI Assistant Styles */
 .chicken-container {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 5.5rem;
+    /* Raised to clear bottom nav */
+    right: 1.5rem;
     z-index: 3000;
     cursor: pointer;
     display: flex;
