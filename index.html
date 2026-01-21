@@ -1,0 +1,1914 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroGuard - Smart Farming Assistant</title>
+    <meta name="description"
+        content="Your farmer-friendly AI companion for crop planning, livestock health, and market connections.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-panel">
+        <div class="logo"><i class="fa-solid fa-leaf"></i>Agro<span>G</span>uard</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('seed-sure')">Seed Sure</a></li>
+            <li><a href="#" onclick="showSection('vet-connect')">My AgriDr.</a></li>
+            <li><a href="#" onclick="showSection('market')">Farm to Market</a></li>
+            <li><a href="#" onclick="showSection('agromall')">AgroMall</a></li>
+            <li><a href="#" onclick="showSection('farm-manager')">Farm Manager</a></li>
+            <li><a href="#" onclick="showSection('finances')">Finances</a></li>
+            <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+        </ul>
+        <button class="btn btn-primary" onclick="showSection('plant-doctor')">
+            <i class="fa-solid fa-stethoscope"></i> Plant Doctor
+        </button>
+    </nav>
+
+    <!-- Side Navigation Menu (Global) -->
+    <div class="side-nav-home glass-panel">
+        <a href="#" onclick="showSection('home')" title="Home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" onclick="showSection('seed-sure')" title="Seed Sure">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Seed Sure</span>
+        </a>
+        <a href="#" onclick="showSection('vet-connect')" title="Vet Connect">
+            <i class="fa-solid fa-cow"></i>
+            <span>Vet Connect</span>
+        </a>
+        <a href="#" onclick="showSection('market')" title="Farm Market">
+            <i class="fa-solid fa-shop"></i>
+            <span>Farm Market</span>
+        </a>
+        <a href="#" onclick="showSection('plant-doctor')" title="Plant Doctor">
+            <i class="fa-solid fa-user-doctor"></i>
+            <span>Plant Doctor</span>
+        </a>
+        <a href="#" onclick="showSection('agromall')" title="AgroMall">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>AgroMall</span>
+        </a>
+        <a href="#" onclick="showSection('farm-manager')" title="Farm Manager">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Manager</span>
+        </a>
+        <a href="#" onclick="showSection('finances')" title="Finances">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Finances</span>
+        </a>
+        <a href="#" onclick="showSection('profile')" title="Profile">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </div>
+
+    <main class="container">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="section-view active" style="min-height: 100vh; position: relative; overflow: hidden;">
+
+
+            <!-- Background Slideshow -->
+            <ul class="slideshow">
+                <li></li>
+                <li></li>
+            </ul>
+
+            <!-- Animated Background Elements -->
+            <div class="leaf-container">
+                <i class="fa-solid fa-leaf floating-leaf"></i>
+                <i class="fa-solid fa-leaf floating-leaf"></i>
+                <i class="fa-brands fa-envira floating-leaf"></i>
+                <i class="fa-solid fa-leaf floating-leaf"></i>
+                <i class="fa-solid fa-seedling floating-leaf"></i>
+                <i class="fa-brands fa-envira floating-leaf"></i>
+            </div>
+            <div class="hero">
+                <h1>Smart Farming for a Better Future</h1>
+                <p>Your all-in-one AI companion for healthier crops, happier livestock, and better market prices.</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <button class="btn btn-primary" onclick="showSection('plant-doctor')">Get Started</button>
+                    <button class="btn btn-accent" onclick="showSection('market')">Find Buyers</button>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="features-grid">
+                <div class="glass-panel feature-card" onclick="showSection('seed-sure')"
+                    style="background: rgba(232, 245, 233, 0.6); border: 1px solid rgba(76, 175, 80, 0.2);">
+                    <div class="feature-icon" style="background: #c8e6c9; color: #2e7d32;"><i
+                            class="fa-solid fa-seedling"></i></div>
+                    <h3>Seed Sure</h3>
+                    <p>Expert advice on what to plant based on your specific soil and climate.</p>
+                </div>
+                <div class="glass-panel feature-card" onclick="showSection('vet-connect')"
+                    style="background: rgba(241, 248, 233, 0.6); border: 1px solid rgba(139, 195, 74, 0.2);">
+                    <div class="feature-icon" style="background: #f1f8e9; color: #558b2f;"><i
+                            class="fa-solid fa-cow"></i></div>
+                    <h3>Vet Connect</h3>
+                    <p>Manage livestock health, get vaccination reminders, and diagnose symptoms.</p>
+                </div>
+                <div class="glass-panel feature-card" onclick="showSection('market')"
+                    style="background: rgba(241, 248, 233, 0.6); border: 1px solid rgba(139, 195, 74, 0.2);">
+                    <div class="feature-icon" style="background: #dcedc8; color: #558b2f;"><i
+                            class="fa-solid fa-shop"></i></div>
+                    <h3>Farm to Market</h3>
+                    <p>Directly connect with local supermarkets, restaurants, and buyers.</p>
+                </div>
+                <div class="glass-panel feature-card" onclick="showSection('plant-doctor')"
+                    style="background: rgba(232, 245, 233, 0.6); border: 1px solid rgba(76, 175, 80, 0.2);">
+                    <div class="feature-icon" style="background: #e8f5e9; color: #1b5e20;"><i
+                            class="fa-solid fa-user-doctor"></i></div>
+                    <h3>Plant Doctor</h3>
+                    <p>Diagnose crop diseases instantly with AI-powered symptom analysis.</p>
+                </div>
+                <div class="glass-panel feature-card" onclick="showSection('agromall')"
+                    style="background: rgba(224, 242, 241, 0.6); border: 1px solid rgba(0, 77, 64, 0.2); border-bottom: 4px solid var(--accent-color);">
+                    <div class="feature-icon" style="background: #b2dfdb; color: #004d40;"><i
+                            class="fa-solid fa-cart-shopping"></i></div>
+                    <h3>AgroMall</h3>
+                    <p>Access high-demand buying leads and fulfill specific industrial orders.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEED SURE SECTION -->
+        <section id="seed-sure" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
+            <div class="glass-panel"
+                style="padding: 3rem; max-width: 900px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.8); background: #dcedc8; box-shadow: 0 20px 40px rgba(76, 175, 80, 0.1);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <div
+                        style="width: 80px; height: 80px; background: var(--primary-color); border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);">
+                        <i class="fa-solid fa-seedling" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h2 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 0.5rem;">Seed Sure</h2>
+                    <p style="color: #666; max-width: 500px; margin: 0 auto;">Intelligent planting advice powered by
+                        regional data and soil analysis.</p>
+                </div>
+
+                <form class="farm-form" onsubmit="handleSeedSure(event)"
+                    style="background: rgba(255,255,255,0.5); padding: 2rem; border-radius: 20px; border: 1px solid #eee;">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="form-group">
+                            <label for="location"
+                                style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; margin-bottom: 0.8rem;">
+                                <i class="fa-solid fa-location-dot" style="color: var(--primary-color);"></i> Location
+                                (State)
+                            </label>
+                            <select id="location" required
+                                style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; background: white; font-size: 1rem;">
+                                <option value="" disabled selected>Select a State</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="FCT - Abuja">FCT - Abuja</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Nasarawa">Nasarawa</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Zamfara">Zamfara</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="soil-type"
+                                style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; margin-bottom: 0.8rem;">
+                                <i class="fa-solid fa-mountain-sun" style="color: var(--primary-color);"></i> Soil Type
+                            </label>
+                            <select id="soil-type"
+                                style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; background: white; font-size: 1rem;">
+                                <option value="loam">Loamy Soil</option>
+                                <option value="clay">Clay Soil</option>
+                                <option value="sandy">Sandy Soil</option>
+                                <option value="silt">Silt Soil</option>
+                                <option value="unknown">I don't know</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="season"
+                                style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; margin-bottom: 0.8rem;">
+                                <i class="fa-solid fa-calendar-check" style="color: var(--primary-color);"></i> Current
+                                Season
+                            </label>
+                            <select id="season"
+                                style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; background: white; font-size: 1rem;">
+                                <option value="long-rains">Long Rains</option>
+                                <option value="short-rains">Short Rains</option>
+                                <option value="dry">Dry Season</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; padding: 1.2rem; font-weight: bold; font-size: 1.1rem; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 1rem; box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2);">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i> Generate Planting Recommendation
+                    </button>
+                </form>
+
+                <!-- Results Container -->
+                <div id="seedsure-results" style="margin-top: 3rem; display: none; animation: slideUp 0.5s ease-out;">
+                    <div
+                        style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #eee;">
+                        <div style="background: var(--primary-color); padding: 1.5rem; color: white;">
+                            <h3 style="margin: 0; display: flex; align-items: center; gap: 0.8rem;">
+                                <i class="fa-solid fa-clipboard-check"></i> Analysis Complete
+                            </h3>
+                        </div>
+                        <div id="seedsure-result-body" style="padding: 2rem;">
+                            <!-- JS Inject -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vet-connect" class="section-view" style="background: #f8faf0; padding: 3rem 1rem;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+
+                <!-- Health Dashboard -->
+                <div class="glass-panel"
+                    style="padding: 1.5rem; background: #f1f8e9; border: 1px solid rgba(139, 195, 74, 0.2); display: flex; flex-direction: column;">
+                    <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-calendar-check"></i> Vaccine Reminders</h3>
+                    <ul id="vaccine-list" style="list-style: none; margin-top: 1rem; flex-grow: 1;">
+                        <li
+                            style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                            <span>Foot & Mouth Booster</span>
+                            <span style="color: var(--primary-color); font-weight: bold;">Due in 3 days</span>
+                        </li>
+                        <li
+                            style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                            <span>Deworming (Herd A)</span>
+                            <span style="color: #43a047; font-weight: bold;">Due Tomorrow</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline-sm" style="margin-top: 1rem;" onclick="openVaccineModal()">+ Add
+                        Reminder</button>
+                    <div style="margin-top: 2rem; background: #e8f5e9; padding: 1rem; border-radius: 8px;">
+                        <h4><i class="fa-solid fa-lightbulb"></i> Daily Fact</h4>
+                        <p id="daily-fact-text"
+                            style="font-size: 0.9rem; margin-top: 0.5rem; transition: opacity 0.5s ease;">Cattle need
+                            plenty of clean water. A dairy cow
+                            can drink up to 30 to 50 gallons of water a day!</p>
+                    </div>
+                </div>
+
+                <!-- State-Based Vet Finder -->
+                <div class="glass-panel"
+                    style="padding: 1.5rem; background: #fffde7; border: 1px solid rgba(251, 192, 45, 0.3); display: flex; flex-direction: column;">
+                    <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-hospital" style="color: #fbc02d;"></i> Vet
+                        State Finder</h3>
+                    <p style="font-size: 0.8rem; color: #666; margin-bottom: 1.2rem;">Select your state to instantly
+                        find available clinics.</p>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label
+                            style="font-size: 0.75rem; font-weight: 700; color: #555; display: block; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Location:</label>
+                        <select id="vet-state-filter"
+                            style="width: 100%; padding: 0.7rem; border-radius: 8px; border: 2px solid #eee; margin-bottom: 0.8rem; background: white; font-weight: 600; color: #333; outline: none; transition: border-color 0.3s ease; font-size: 0.85rem;">
+                            <option value="">-- Choose State --</option>
+                            <option value="Abia">Abia</option>
+                            <option value="Adamawa">Adamawa</option>
+                            <option value="Akwa Ibom">Akwa Ibom</option>
+                            <option value="Anambra">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Bayelsa">Bayelsa</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Borno">Borno</option>
+                            <option value="Cross River">Cross River</option>
+                            <option value="Delta">Delta</option>
+                            <option value="Ebonyi">Ebonyi</option>
+                            <option value="Edo">Edo</option>
+                            <option value="Ekiti">Ekiti</option>
+                            <option value="Enugu">Enugu</option>
+                            <option value="FCT - Abuja">FCT - Abuja</option>
+                            <option value="Gombe">Gombe</option>
+                            <option value="Imo">Imo</option>
+                            <option value="Jigawa">Jigawa</option>
+                            <option value="Kaduna">Kaduna</option>
+                            <option value="Kano">Kano</option>
+                            <option value="Katsina">Katsina</option>
+                            <option value="Kebbi">Kebbi</option>
+                            <option value="Kogi">Kogi</option>
+                            <option value="Kwara">Kwara</option>
+                            <option value="Lagos">Lagos</option>
+                            <option value="Nasarawa">Nasarawa</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Ogun">Ogun</option>
+                            <option value="Ondo">Ondo</option>
+                            <option value="Osun">Osun</option>
+                            <option value="Oyo">Oyo</option>
+                            <option value="Plateau">Plateau</option>
+                            <option value="Rivers">Rivers</option>
+                            <option value="Sokoto">Sokoto</option>
+                            <option value="Taraba">Taraba</option>
+                            <option value="Yobe">Yobe</option>
+                            <option value="Zamfara">Zamfara</option>
+                        </select>
+                        <button onclick="handleVetStateSearch()" class="btn btn-primary"
+                            style="width: 100%; border-radius: 8px; background: #fbc02d; border: none; color: #333; font-weight: bold; padding: 0.8rem; font-size: 0.85rem; box-shadow: 0 4px 10px rgba(251, 192, 45, 0.2);">
+                            <i class="fa-solid fa-magnifying-glass"></i> Find Hospitals
+                        </button>
+                    </div>
+
+                    <div id="nearby-vets-list"
+                        style="flex-grow: 1; overflow-y: auto; max-height: 280px; background: rgba(0,0,0,0.03); border-radius: 12px; padding: 1rem; border: 1px inset rgba(0,0,0,0.05);">
+                        <p style="text-align: center; color: #999; font-size: 0.85rem; margin-top: 3rem;">
+                            <i class="fa-solid fa-map-pin"
+                                style="display: block; font-size: 2rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                            Select a state and click search to see available hospitals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Symptom Checker -->
+                <div class="glass-panel"
+                    style="padding: 1.5rem; background: #e8f5e9; border: 1px solid rgba(76, 175, 80, 0.2); display: flex; flex-direction: column;">
+                    <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-notes-medical" style="color: #4caf50;"></i>
+                        Dr.B</h3>
+                    <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">Enter symptoms for instant advice.
+                    </p>
+                    <div class="chat-interface" style="height: 320px;">
+                        <div id="vet-chat-messages" class="chat-messages" style="height: 230px; font-size: 0.85rem;">
+                            <div class="message ai">Hello! I'm Dr. B. How is your animal feeling?</div>
+                        </div>
+                        <form class="chat-input-area" onsubmit="handleVetChat(event)">
+                            <input type="text" id="vet-input" placeholder="Symptoms..." required
+                                style="padding: 0.6rem; font-size: 0.85rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 0.6rem;"><i
+                                    class="fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLANT DOCTOR SECTION (Main Feature) -->
+        <section id="plant-doctor" class="section-view" style="background: #f8faf0; padding: 4rem 1rem;">
+            <div class="diagnosis-container">
+                <div class="glass-panel"
+                    style="padding: 3rem; background: #f1f8e9; border: 1px solid rgba(139, 195, 74, 0.2); max-width: 800px; margin: 0 auto;">
+                    <i class="fa-solid fa-plant-wilt"
+                        style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h2>Plant Doctor</h2>
+                    <p>Describe the symptoms on your plant leaves, stem, or fruit.</p>
+
+                    <div class="chat-interface">
+                        <div id="plant-chat-messages" class="chat-messages">
+                            <div class="message ai">Hi there! I can help identify plant diseases. Describe the spots,
+                                color changes, or pests you see.</div>
+                        </div>
+                        <form class="chat-input-area" onsubmit="handlePlantChat(event)">
+                            <input type="text" id="plant-input"
+                                placeholder="Describe symptoms e.g. yellow spots, holes in leaves, wilting..." required>
+                            <button type="submit" class="btn btn-primary"><i
+                                    class="fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- Simulated Image Upload -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FARM TO MARKET SECTION -->
+        <section id="market" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
+            <div class="glass-panel"
+                style="max-width: 1000px; margin: 0 auto; padding: 2rem; background: #dcedc8; border: 1px solid rgba(139, 195, 74, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Farm Market Interface</h2>
+                    <button class="btn btn-primary" onclick="openProduceModal()"><i class="fa-solid fa-plus"></i> Post
+                        Your Produce</button>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <!-- Market Item 1 -->
+                    <div
+                        style="border: 1px solid #c5e1a5; border-radius: 12px; padding: 1rem; background: #f9fbe7; transition: transform 0.3s ease; cursor: pointer;">
+                        <div
+                            style="height: 150px; background: #eee; border-radius: 8px; margin-bottom: 1rem; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=600&auto=format&fit=crop"
+                                alt="Fresh Carrots"
+                                style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </div>
+                        <h4>Fresh Carrots</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Looking for: Supermarkets</p>
+                        <div style="margin-top: 0.5rem; font-weight: bold; color: var(--primary-color);">500 kg
+                            available</div>
+
+
+                    </div>
+                    <!-- Market Item 2 -->
+                    <div
+                        style="border: 1px solid #c5e1a5; border-radius: 12px; padding: 1rem; background: #f9fbe7; transition: transform 0.3s ease; cursor: pointer;">
+                        <div
+                            style="height: 150px; background: #eee; border-radius: 8px; margin-bottom: 1rem; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=600&auto=format&fit=crop"
+                                alt="Red Apples" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h4>Red Apples</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Looking for: Restaurants</p>
+                        <div style="margin-top: 0.5rem; font-weight: bold; color: var(--primary-color);">200 kg
+                            available</div>
+
+
+                    </div>
+                    <!-- Market Item 3 -->
+                    <div
+                        style="border: 1px solid #c5e1a5; border-radius: 12px; padding: 1rem; background: #f9fbe7; transition: transform 0.3s ease; cursor: pointer;">
+                        <div
+                            style="height: 150px; background: #eee; border-radius: 8px; margin-bottom: 1rem; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=600&auto=format&fit=crop"
+                                alt="Wheat Grain" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h4>Wheat Grain</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Looking for: Wholesalers</p>
+                        <div style="margin-top: 0.5rem; font-weight: bold; color: var(--primary-color);">10 Tons
+                            available</div>
+
+
+                    </div>
+                </div>
+
+                <!-- NEW: Action Cards Section -->
+                <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem;">
+                    <!-- Buyer Upload Card -->
+                    <div
+                        style="flex: 1; min-width: 250px; border: 2px dashed #689f38; border-radius: 12px; padding: 1.5rem; background: #f1f8e9; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                        <div
+                            style="width: 70px; height: 70px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--primary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                            <i class="fa-solid fa-address-card" style="font-size: 2rem;"></i>
+                        </div>
+                        <h4>Buyers: Upload Contact Card</h4>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Are you a buyer? Provide your
+                            contact details so farmers can reach you directly.</p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openBuyerUploadModal()">Upload
+                            Contact Card</button>
+                    </div>
+
+                    <!-- Farmer Contact Card -->
+                    <div
+                        style="flex: 1; min-width: 250px; border: 2px dashed #1976d2; border-radius: 12px; padding: 1.5rem; background: #e8f5e9; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                        <div
+                            style="width: 70px; height: 70px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: #1976d2; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                            <i class="fa-solid fa-address-book" style="font-size: 2rem;"></i>
+                        </div>
+                        <h4>Farmers: Find Buyers</h4>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Looking for a market? internal
+                            database to find verified buyers near you.</p>
+                        <button class="btn btn-accent" style="width: 100%; background: #2196f3; color: white;"
+                            onclick="openBuyerDirectoryModal()">Search Directory</button>
+                    </div>
+                </div>
+
+                <!-- FARM TO HOME SECTION (New Feature) -->
+                <div class="glass-panel"
+                    style="max-width: 1000px; margin: 2rem auto 0; padding: 2rem; border-left: 5px solid var(--accent-color); background: #f1f8e9;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2 style="color: var(--primary-dark); display: flex; align-items: center; gap: 1rem;">
+                            <i class="fa-solid fa-house-chimney-medical"
+                                style="font-size: 2rem; color: var(--accent-color);"></i>
+                            Farm to Home
+                            <span
+                                style="font-size: 0.9rem; background: var(--primary-color); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-weight: normal; margin-left: 1rem;">Beta</span>
+                        </h2>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                        <!-- Customer Order Form -->
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: #333;">Place Home Order</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                                Directly order fresh produce bundles for your household. Delivered every Saturday.
+                            </p>
+                            <form onsubmit="handleHomeOrder(event)"
+                                style="background: #e8f5e9; padding: 1.5rem; border-radius: 12px; border: 1px solid #c8e6c9;">
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label style="font-size: 0.9rem;">Select Bundle</label>
+                                    <select id="home-bundle" required
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                        <option value="" disabled selected>Choose a basket...</option>
+                                        <option value="veg-mix">Family Veggie Mix (₦5,000)</option>
+                                        <option value="fruit-basket">Vitamin Boost Fruits (₦7,000)</option>
+                                        <option value="tuber-pack">Tuber Heavy Pack (₦10,000)</option>
+                                        <option value="custom">Custom Order (Specify below)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label style="font-size: 0.9rem;">Order Details / Specifics</label>
+                                    <textarea id="home-details"
+                                        placeholder="e.g. No peppers please, add extra carrots..." rows="2"
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc; font-family: inherit;"></textarea>
+                                </div>
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                    <div class="form-group">
+                                        <label style="font-size: 0.9rem;">State</label>
+                                        <select id="home-state" required
+                                            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                            <option value="" disabled selected>Select State</option>
+                                            <option value="Abia">Abia</option>
+                                            <option value="Adamawa">Adamawa</option>
+                                            <option value="Akwa Ibom">Akwa Ibom</option>
+                                            <option value="Anambra">Anambra</option>
+                                            <option value="Bauchi">Bauchi</option>
+                                            <option value="Bayelsa">Bayelsa</option>
+                                            <option value="Benue">Benue</option>
+                                            <option value="Borno">Borno</option>
+                                            <option value="Cross River">Cross River</option>
+                                            <option value="Delta">Delta</option>
+                                            <option value="Ebonyi">Ebonyi</option>
+                                            <option value="Edo">Edo</option>
+                                            <option value="Ekiti">Ekiti</option>
+                                            <option value="Enugu">Enugu</option>
+                                            <option value="FCT - Abuja">FCT - Abuja</option>
+                                            <option value="Gombe">Gombe</option>
+                                            <option value="Imo">Imo</option>
+                                            <option value="Jigawa">Jigawa</option>
+                                            <option value="Kaduna">Kaduna</option>
+                                            <option value="Kano">Kano</option>
+                                            <option value="Katsina">Katsina</option>
+                                            <option value="Kebbi">Kebbi</option>
+                                            <option value="Kogi">Kogi</option>
+                                            <option value="Kwara">Kwara</option>
+                                            <option value="Lagos">Lagos</option>
+                                            <option value="Nasarawa">Nasarawa</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Ogun">Ogun</option>
+                                            <option value="Ondo">Ondo</option>
+                                            <option value="Osun">Osun</option>
+                                            <option value="Oyo">Oyo</option>
+                                            <option value="Plateau">Plateau</option>
+                                            <option value="Rivers">Rivers</option>
+                                            <option value="Sokoto">Sokoto</option>
+                                            <option value="Taraba">Taraba</option>
+                                            <option value="Yobe">Yobe</option>
+                                            <option value="Zamfara">Zamfara</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="font-size: 0.9rem;">Street Address</label>
+                                        <input type="text" id="home-address" placeholder="House No, Street Area"
+                                            required
+                                            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label style="font-size: 0.9rem;">Phone Contact</label>
+                                    <input type="tel" id="home-phone" placeholder="080..." required
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Placed Order & Pay on
+                                    Delivery</button>
+                            </form>
+                        </div>
+
+                        <!-- Visual Bundles -->
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: #333;">Available Bundles</h3>
+                            <!-- Bundle 1 -->
+                            <div
+                                style="display: flex; gap: 1rem; margin-bottom: 1.5rem; background: #f1fcf1; padding: 1rem; border-radius: 12px; border: 1px solid #c8e6c9; box-shadow: 0 4px 10px rgba(0,0,0,0.05); align-items: center;">
+                                <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden;">
+                                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=200&auto=format&fit=crop"
+                                        alt="Veggie Mix" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Family Veggie Mix</h4>
+                                    <p style="font-size: 0.8rem; color: #666;">Tomatoes, Peppers, Onions, Spinach,
+                                        Carrots.
+                                    </p>
+                                    <span
+                                        style="font-weight: bold; color: var(--primary-color); font-size: 0.9rem;">₦5,000</span>
+                                </div>
+                            </div>
+                            <!-- Bundle 2 -->
+                            <div
+                                style="display: flex; gap: 1rem; margin-bottom: 1.5rem; background: #f1fcf1; padding: 1rem; border-radius: 12px; border: 1px solid #c8e6c9; box-shadow: 0 4px 10px rgba(0,0,0,0.05); align-items: center;">
+                                <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden;">
+                                    <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=200&auto=format&fit=crop"
+                                        alt="Fruit Basket" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.2rem;">Vitamin Boost Fruits</h4>
+                                    <p style="font-size: 0.8rem; color: #666;">Oranges, Watermelon, Pineapple, Pawpaw.
+                                    </p>
+                                    <span
+                                        style="font-weight: bold; color: var(--primary-color); font-size: 0.9rem;">₦7,000</span>
+                                </div>
+                            </div>
+                            <!-- Reviews Section -->
+                            <div style="margin-top: 2rem;">
+                                <h3 style="margin-bottom: 1rem; color: #333;"> Customer Reviews</h3>
+
+                                <!-- Reviews List -->
+                                <div id="reviews-list"
+                                    style="max-height: 300px; overflow-y: auto; margin-bottom: 1.5rem; padding-right: 0.5rem;">
+                                    <!-- Initial Review -->
+                                    <div class="review-item"
+                                        style="background: rgba(33, 150, 243, 0.1); padding: 1rem; border-radius: 12px; border: 1px dashed #2196f3; margin-bottom: 1rem;">
+                                        <p style="font-style: italic; color: #555; font-size: 0.9rem;">"The freshness of
+                                            the
+                                            veggies I got last week was incredible! Much better than the open market."
+                                        </p>
+                                        <div
+                                            style="margin-top: 0.5rem; font-weight: bold; font-size: 0.8rem; color: #1976d2;">
+                                            - Mrs. Adebayo, Lekki</div>
+                                    </div>
+                                </div>
+
+                                <!-- Add Review Form -->
+                                <form onsubmit="handleAddReview(event)"
+                                    style="background: #f9f9f9; padding: 1rem; border-radius: 12px; border: 1px solid #eee;">
+                                    <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem;">Leave a Review</h4>
+                                    <input type="text" id="review-name" placeholder="Your Name" required
+                                        style="width: 100%; padding: 0.6rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 6px;">
+                                    <textarea id="review-text" placeholder="Share your experience..." rows="2" required
+                                        style="width: 100%; padding: 0.6rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 6px; font-family: inherit;"></textarea>
+                                    <button type="submit" class="btn btn-outline-sm" style="width: 100%;">Post
+                                        Review</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Payment Card -->
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: #333;">Secure Payment</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                                Prefer to pay now? Use our secure gateway.
+                            </p>
+                            <form onsubmit="handlePayment(event)"
+                                style="background: #f5f5f5; padding: 1.5rem; border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label style="font-size: 0.9rem;">Card Holder Name</label>
+                                    <input type="text" placeholder="John Doe" required
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label style="font-size: 0.9rem;">Card Number</label>
+                                    <input type="number" placeholder="0000000000000000" maxlength="19" required
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                </div>
+                                <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                                    <div style="flex: 1;">
+                                        <label style="font-size: 0.9rem;">Expiry Date</label>
+                                        <input type="text" placeholder="MM/YY" maxlength="5" required
+                                            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <label style="font-size: 0.9rem;">CVV</label>
+                                        <input type="number" placeholder="123" maxlength="3" required
+                                            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%; background: #333;">
+                                    <i class="fa-solid fa-lock"></i> Pay Securely
+                                </button>
+                                <p style="font-size: 0.7rem; color: #999; text-align: center; margin-top: 1rem;">
+                                    <i class="fa-solid fa-shield-halved"></i> 256-bit SSL Encrypted
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- AGROMALL SECTION (Buyer Requests) -->
+        <section id="agromall" class="section-view" style="background: #e0f2f1; padding: 4rem 1rem;">
+            <div class="glass-panel"
+                style="max-width: 1100px; margin: 0 auto; padding: 2rem; background: #b2dfdb; border: 1px solid rgba(0, 77, 64, 0.1);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2
+                        style="color: var(--primary-dark); font-size: 2.2rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                        <i class="fa-solid fa-cart-shopping" style="color: var(--accent-color);"></i>
+                        AgroMall: Buying Leads
+                    </h2>
+                    <p style="color: #666; margin-top: 0.5rem;">Where buyers post their needs and farmers supply the
+                        solutions.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem;">
+                    <!-- Buyer Post Card -->
+                    <div class="glass-panel"
+                        style="background: #ffffff; padding: 2rem; border: 1px solid rgba(0, 77, 64, 0.2); box-shadow: 0 4px 15px rgba(0, 77, 64, 0.05);">
+                        <h3
+                            style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; color: #333;">
+                            <i class="fa-solid fa-pen-nib" style="color: var(--primary-color);"></i>
+                            Post a Buying Request
+                        </h3>
+                        <form onsubmit="handleMallRequest(event)" id="mall-post-form">
+                            <div class="form-group" style="margin-bottom: 1.2rem;">
+                                <label style="font-size: 0.9rem; font-weight: 600;">Item Needed</label>
+                                <input type="text" id="mall-item" placeholder="e.g. 50 Bags of Yellow Maize" required
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 1.2rem;">
+                                <label style="font-size: 0.9rem; font-weight: 600;">Quantity Required</label>
+                                <input type="text" id="mall-qty" placeholder="e.g. 50 bags, 10 tons..." required
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 1.2rem;">
+                                <label style="font-size: 0.9rem; font-weight: 600;">Delivery Location (State)</label>
+                                <select id="mall-loc" required
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                                    <option value="" disabled selected>Select State</option>
+                                    <option value="Abia">Abia</option>
+                                    <option value="Adamawa">Adamawa</option>
+                                    <option value="Akwa Ibom">Akwa Ibom</option>
+                                    <option value="Anambra">Anambra</option>
+                                    <option value="Bauchi">Bauchi</option>
+                                    <option value="Bayelsa">Bayelsa</option>
+                                    <option value="Benue">Benue</option>
+                                    <option value="Borno">Borno</option>
+                                    <option value="Cross River">Cross River</option>
+                                    <option value="Delta">Delta</option>
+                                    <option value="Ebonyi">Ebonyi</option>
+                                    <option value="Edo">Edo</option>
+                                    <option value="Ekiti">Ekiti</option>
+                                    <option value="Enugu">Enugu</option>
+                                    <option value="FCT - Abuja">FCT - Abuja</option>
+                                    <option value="Gombe">Gombe</option>
+                                    <option value="Imo">Imo</option>
+                                    <option value="Jigawa">Jigawa</option>
+                                    <option value="Kaduna">Kaduna</option>
+                                    <option value="Kano">Kano</option>
+                                    <option value="Katsina">Katsina</option>
+                                    <option value="Kebbi">Kebbi</option>
+                                    <option value="Kogi">Kogi</option>
+                                    <option value="Kwara">Kwara</option>
+                                    <option value="Lagos">Lagos</option>
+                                    <option value="Nasarawa">Nasarawa</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Ogun">Ogun</option>
+                                    <option value="Ondo">Ondo</option>
+                                    <option value="Osun">Osun</option>
+                                    <option value="Oyo">Oyo</option>
+                                    <option value="Plateau">Plateau</option>
+                                    <option value="Rivers">Rivers</option>
+                                    <option value="Sokoto">Sokoto</option>
+                                    <option value="Taraba">Taraba</option>
+                                    <option value="Yobe">Yobe</option>
+                                    <option value="Zamfara">Zamfara</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label style="font-size: 0.9rem; font-weight: 600;">Contact / Business Name</label>
+                                <input type="text" id="mall-buyer" placeholder="Your name or company" required
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; padding: 1rem; font-weight: bold; font-size: 1rem; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                                <i class="fa-solid fa-bullhorn"></i> Broadcast My Need
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Request Wall -->
+                    <div>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <h3 style="color: #333;"><i class="fa-solid fa-list-check"
+                                    style="color: var(--primary-color);"></i> Request Wall</h3>
+                            <span id="mall-request-count"
+                                style="background: var(--primary-color); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">0
+                                Active</span>
+                        </div>
+
+                        <div id="mall-requests-list"
+                            style="max-height: 580px; overflow-y: auto; padding-right: 0.5rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                            <!-- Dynamically populated from script.js -->
+                            <div
+                                style="text-align: center; color: #999; padding: 4rem 2rem; background: rgba(255,255,255,0.4); border-radius: 16px; border: 2px dashed #eee;">
+                                <i class="fa-solid fa-store-slash"
+                                    style="font-size: 3rem; margin-bottom: 1.2rem; opacity: 0.4;"></i>
+                                <p>No buying leads at the moment. When buyers post their needs, you'll see them here!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FARM MANAGER SECTION (New Feature) -->
+    <section id="farm-manager" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
+        <div class="glass-panel"
+            style="max-width: 1100px; margin: 0 auto; padding: 2rem; background: #dcedc8; border: 1px solid rgba(46, 125, 50, 0.2);">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-dark);">Farm Management Dashboard
+            </h2>
+
+            <div class="manager-grid">
+                <!-- Growth Stages Card -->
+                <div class="manager-card glass-panel"
+                    style="background: #e8f5e9; border: 1px solid rgba(46, 125, 50, 0.1);">
+                    <div class="card-header">
+                        <div class="icon-box" style="background: #e0f2f1; color: #00695c;">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Growth Tracker</h3>
+                    </div>
+                    <div class="card-content">
+                        <!-- Plant Growth -->
+                        <div class="growth-item">
+                            <div class="growth-info">
+                                <span class="growth-name"><i class="fa-solid fa-seedling"></i> Maize Field A</span>
+                                <span class="growth-stage">Vegetative (Week 4)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 45%; background: var(--primary-color);"></div>
+                            </div>
+                        </div>
+                        <!-- Animal Growth -->
+                        <div class="growth-item">
+                            <div class="growth-info">
+                                <span class="growth-name"><i class="fa-solid fa-cow"></i> Cattle Herd B</span>
+                                <span class="growth-stage">Fattening (Month 2)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 70%; background: var(--accent-color);"></div>
+                            </div>
+                        </div>
+                        <button class="btn-text" onclick="openGrowthModal()">View Details <i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Fertilizer Schedule Card -->
+                <div class="manager-card glass-panel"
+                    style="background: #f1f8e9; border: 1px solid rgba(46, 125, 50, 0.1);">
+                    <div class="card-header">
+                        <div class="icon-box" style="background: #e1bee7; color: #6a1b9a;">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h3>Fertilizer Schedule</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="schedule-list" id="fertilizer-schedule-list">
+                            <li class="schedule-item urgent">
+                                <div class="date-box">
+                                    <span class="day">15</span>
+                                    <span class="month">JAN</span>
+                                </div>
+                                <div class="schedule-details">
+                                    <h4>Apply NPK 15-15-15</h4>
+                                    <p>Tomato Plot 20kg</p>
+                                </div>
+                            </li>
+                            <li class="schedule-item">
+                                <div class="date-box">
+                                    <span class="day">22</span>
+                                    <span class="month">JAN</span>
+                                </div>
+                                <div class="schedule-details">
+                                    <h4>Compost Top Dressing</h4>
+                                    <p>Vegetable Garden</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-sm" onclick="openScheduleModal()">+ Add Schedule</button>
+                    </div>
+                </div>
+
+                <!-- Planting & Harvest Advisor (Includes Pesticide Log) -->
+                <div class="manager-card glass-panel"
+                    style="background: #e8f5e9; border: 1px solid rgba(76, 175, 80, 0.1);">
+                    <div class="card-header">
+                        <div class="icon-box" style="background: #e8f5e9; color: #2e7d32;">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3>Planting & Harvest Advisor</h3>
+                    </div>
+                    <div class="card-content">
+                        <!-- Form -->
+                        <form onsubmit="calculateHarvest(event)"
+                            style="margin-bottom: 1rem; border-bottom: 1px dashed #ccc; padding-bottom: 1rem;">
+                            <div style="margin-bottom: 0.8rem;">
+                                <label
+                                    style="display:block; font-size: 0.8rem; color:#666; margin-bottom:0.2rem;">Location
+                                    / State</label>
+                                <select id="harvest-location" required
+                                    style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:6px;">
+                                    <option value="" disabled selected>Select a State</option>
+                                    <option value="Abia">Abia</option>
+                                    <option value="Adamawa">Adamawa</option>
+                                    <option value="Akwa Ibom">Akwa Ibom</option>
+                                    <option value="Anambra">Anambra</option>
+                                    <option value="Bauchi">Bauchi</option>
+                                    <option value="Bayelsa">Bayelsa</option>
+                                    <option value="Benue">Benue</option>
+                                    <option value="Borno">Borno</option>
+                                    <option value="Cross River">Cross River</option>
+                                    <option value="Delta">Delta</option>
+                                    <option value="Ebonyi">Ebonyi</option>
+                                    <option value="Edo">Edo</option>
+                                    <option value="Ekiti">Ekiti</option>
+                                    <option value="Enugu">Enugu</option>
+                                    <option value="FCT - Abuja">FCT - Abuja</option>
+                                    <option value="Gombe">Gombe</option>
+                                    <option value="Imo">Imo</option>
+                                    <option value="Jigawa">Jigawa</option>
+                                    <option value="Kaduna">Kaduna</option>
+                                    <option value="Kano">Kano</option>
+                                    <option value="Katsina">Katsina</option>
+                                    <option value="Kebbi">Kebbi</option>
+                                    <option value="Kogi">Kogi</option>
+                                    <option value="Kwara">Kwara</option>
+                                    <option value="Lagos">Lagos</option>
+                                    <option value="Nasarawa">Nasarawa</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Ogun">Ogun</option>
+                                    <option value="Ondo">Ondo</option>
+                                    <option value="Osun">Osun</option>
+                                    <option value="Oyo">Oyo</option>
+                                    <option value="Plateau">Plateau</option>
+                                    <option value="Rivers">Rivers</option>
+                                    <option value="Sokoto">Sokoto</option>
+                                    <option value="Taraba">Taraba</option>
+                                    <option value="Yobe">Yobe</option>
+                                    <option value="Zamfara">Zamfara</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom: 0.8rem;">
+                                <label
+                                    style="display:block; font-size: 0.8rem; color:#666; margin-bottom:0.2rem;">Select
+                                    Crop</label>
+                                <input list="crop-options" id="crop-select" placeholder="Type or select crop..."
+                                    required
+                                    style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:6px;">
+                                <datalist id="crop-options">
+                                    <option value="Maize">
+                                    <option value="Rice">
+                                    <option value="Tomato">
+                                    <option value="Cassava">
+                                    <option value="Yam">
+                                    <option value="Cocoa">
+                                    <option value="Citrus">
+                                    <option value="Plantain">
+                                </datalist>
+                            </div>
+                            <div style="margin-bottom: 0.8rem;">
+                                <label
+                                    style="display:block; font-size: 0.8rem; color:#666; margin-bottom:0.2rem;">Planting
+                                    Date</label>
+                                <input type="date" id="plant-date" required
+                                    style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:6px;">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 0.9rem;">Check
+                                Cycle</button>
+                        </form>
+
+                        <div id="harvest-result"
+                            style="display: none; margin-bottom: 1rem; padding: 0.8rem; border-radius: 6px;"></div>
+
+                        <div style="opacity: 0.8;">
+                            <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #666;"><i
+                                    class="fa-solid fa-skull-crossbones"></i> Pesticide Log</h4>
+                            <ul class="schedule-list" id="pesticide-log-list">
+                                <li class="schedule-item"
+                                    style="padding: 0.5rem 0; border-left: 4px solid #1b5e20; padding-left: 10px; background: #f1f8e9;">
+                                    <div class="date-box"
+                                        style="min-width: 40px; padding: 0.2rem; background: #c8e6c9; color: #1b5e20;">
+                                        <span class="day" style="font-size: 0.9rem;">Today</span>
+                                    </div>
+                                    <div class="schedule-details">
+                                        <h4 style="font-size: 0.9rem; color: #1b5e20;">Neem Oil Spray</h4>
+                                        <p style="font-size: 0.75rem; color: #2e7d32;">Preventative</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCES SECTION (New Feature) -->
+    <section id="finances" class="section-view" style="background: #e8f5e9; padding: 4rem 1rem;">
+        <div class="glass-panel"
+            style="max-width: 1100px; margin: 0 auto; padding: 2rem; background: #c8e6c9; border: 1px solid rgba(46, 125, 50, 0.2);">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-dark);">Farm Finances & Budgeting
+            </h2>
+
+            <!-- Summary Cards -->
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div
+                    style="background: #e8f5e9; padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #81c784;">
+                    <i class="fa-solid fa-arrow-trend-up"
+                        style="color: var(--primary-color); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <h3 style="margin-bottom: 0.2rem;">Total Income per Month</h3>
+                    <p id="total-income" style="font-size: 1.5rem; font-weight: bold; color: var(--primary-dark);">
+                        ₦0.00
+                    </p>
+                </div>
+                <div
+                    style="background: #f1f8e9; padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #c5e1a5;">
+                    <i class="fa-solid fa-arrow-trend-down"
+                        style="color: #388e3c; font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <h3 style="margin-bottom: 0.2rem;">Total Expenses per Month</h3>
+                    <p id="total-expenses" style="font-size: 1.5rem; font-weight: bold; color: #1b5e20;">₦0.00</p>
+                </div>
+                <div
+                    style="background: #e8f5e9; padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #a5d6a7;">
+                    <i class="fa-solid fa-wallet" style="color: #2e7d32; font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <h3 style="margin-bottom: 0.2rem;">Profit</h3>
+                    <p id="net-balance" style="font-size: 1.5rem; font-weight: bold; color: #1b5e20;">₦0.00</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Left: Transaction History -->
+                <div>
+                    <h3 style="margin-bottom: 1rem;"><i class="fa-solid fa-list"></i> Recent Transactions</h3>
+                    <div id="transaction-list" style="max-height: 400px; overflow-y: auto; padding-right: 0.5rem;">
+                        <!-- JS Injected items -->
+                        <div style="text-align: center; color: #666; padding: 2rem;">No transactions yet.</div>
+                    </div>
+                </div>
+
+                <!-- Right: Add New & Budget -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+                    <!-- Add Transaction Form -->
+                    <div class="glass-panel" style="background: rgba(255,255,255,0.6); padding: 1.5rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--primary-dark);"><i
+                                class="fa-solid fa-pen-to-square"></i> Record Purchase or Sale</h3>
+                        <form onsubmit="handleTransactionSubmit(event)">
+                            <div style="margin-bottom: 1rem;">
+                                <label
+                                    style="display: block; font-size: 0.9rem; margin-bottom: 0.3rem; color: #555;">Transaction
+                                    Type</label>
+                                <select id="trans-type"
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc; font-weight: 500;">
+                                    <option value="expense">Purchase / Cost (Expense)</option>
+                                    <option value="income">Sale (Income)</option>
+                                </select>
+                            </div>
+
+                            <div style="margin-bottom: 1rem;">
+                                <label
+                                    style="display: block; font-size: 0.9rem; margin-bottom: 0.3rem; color: #555;">Description</label>
+                                <input type="text" id="trans-desc" placeholder="e.g. Bought Fertilizer, Sold Yam"
+                                    required
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div>
+                                    <label
+                                        style="display: block; font-size: 0.9rem; margin-bottom: 0.3rem; color: #555;">Amount
+                                        (₦)</label>
+                                    <input type="number" id="trans-amount" placeholder="₦" required min="0" step="1"
+                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                </div>
+                                <div>
+                                    <label
+                                        style="display: block; font-size: 0.9rem; margin-bottom: 0.3rem; color: #555;">Category</label>
+                                    <select id="trans-category"
+                                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                                        <!-- Dynamically populated from budgets -->
+                                        <option value="General">General</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label
+                                    style="display: block; font-size: 0.9rem; margin-bottom: 0.3rem; color: #555;">Date</label>
+                                <input type="date" id="trans-date" required
+                                    style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                <i class="fa-solid fa-plus"></i> Add to Records
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Simple Budget Tracker -->
+                    <div class="glass-panel" style="background: rgba(255,255,255,0.6); padding: 1.5rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="margin: 0;"><i class="fa-solid fa-chart-pie"></i> Budget Goals</h3>
+                            <button class="btn btn-outline-sm" onclick="openBudgetModal()">+ Add Goal</button>
+                        </div>
+                        <div id="budget-goals-container">
+                            <!-- Dynamically populated -->
+                            <div style="text-align: center; color: #666; padding: 1rem;">No budget goals set.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- PROFILE SECTION (New Feature) -->
+    <section id="profile" class="section-view" style="background: #f1f8e9; padding: 4rem 1rem;">
+        <div class="container" style="max-width: 900px; padding-top: 2rem;">
+            <div class="glass-panel"
+                style="padding: 3rem; text-align: center; background: #dcedc8; border: 1px solid rgba(76, 175, 80, 0.2);">
+                <h2 style="margin-bottom: 1rem; color: var(--primary-dark);">Join the AgroGuard Community</h2>
+                <p style="color: #666; margin-bottom: 3rem;">Choose your account type to get started</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Farmer Account Card -->
+                    <div style="background: #f1fcf1; padding: 2rem; border-radius: 16px; border: 2px solid #c8e6c9; transition: all 0.3s ease; cursor: pointer;"
+                        onmouseover="this.style.borderColor='var(--primary-color)'; this.style.transform='translateY(-5px)'"
+                        onmouseout="this.style.borderColor='#c8e6c9'; this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--primary-color);">
+                            <i class="fa-solid fa-tractor" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Farmer Account</h3>
+                        <ul style="text-align: left; margin-bottom: 2rem; color: #555; list-style: none;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Access Plant Doctor
+                            </li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Manage Livestock
+                            </li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Sell Produce
+                                Directly</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%; justify-content: center;"
+                            onclick="openFarmerSignupModal()">Create Farmer Profile</button>
+                    </div>
+
+                    <!-- Customer Account Card -->
+                    <div style="background: #fffcf1; padding: 2rem; border-radius: 16px; border: 2px solid #ffe082; transition: all 0.3s ease; cursor: pointer;"
+                        onmouseover="this.style.borderColor='var(--accent-color)'; this.style.transform='translateY(-5px)'"
+                        onmouseout="this.style.borderColor='#ffe082'; this.style.transform='translateY(0)'">
+                        <div
+                            style="width: 80px; height: 80px; background: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #2e7d32;">
+                            <i class="fa-solid fa-basket-shopping" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Customer Account</h3>
+                        <ul style="text-align: left; margin-bottom: 2rem; color: #555; list-style: none;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                    style="color: #ffb300; margin-right: 0.5rem;"></i> Order Fresh Bundles</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                    style="color: #ffb300; margin-right: 0.5rem;"></i> Track Deliveries</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                    style="color: #ffb300; margin-right: 0.5rem;"></i> Secure Payments</li>
+                        </ul>
+                        <button class="btn btn-accent" style="width: 100%; justify-content: center; color: #333;"
+                            onclick="openBuyerSignupModal()">Create Buyer Profile</button>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; color: #666;">Already have an account? <a href="#"
+                        style="color: var(--primary-color); font-weight: bold;" onclick="openLoginModal()">Login
+                        here</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); margin-top: 2rem;">
+        <p>&copy; 2026 AgroGuard AI. Designed for Farmers.</p>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <h3 id="modal-title" style="margin-bottom: 1rem; color: var(--primary-color);">Contact Buyer</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">Please provide your details so we can connect you.</p>
+            <form onsubmit="handleContactSubmit(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text" id="contact-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="contact-phone">Phone Number</label>
+                    <input type="tel" id="contact-phone" placeholder="+234..." required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="contact-address">Address / Delivery Location</label>
+                    <textarea id="contact-address" placeholder="e.g. 123 Farm Road, Lagos" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Details</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Buyer Directory Modal -->
+    <div id="buyer-directory-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-modal" onclick="closeBuyerDirectoryModal()">&times;</span>
+            <h3 style="margin-bottom: 1rem; color: #1976d2;"><i class="fa-solid fa-users-viewfinder"></i> Buyer
+                Directory</h3>
+            <div style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem;">
+                <input type="text" id="buyer-search" placeholder="Search by crop (e.g. Tomatoes, Grains)..."
+                    oninput="filterBuyerDirectory()"
+                    style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                <button class="btn btn-primary" style="background: #1976d2;"><i class="fa-solid fa-search"></i></button>
+            </div>
+            <div id="buyer-directory-list" style="max-height: 400px; overflow-y: auto;">
+                <!-- Dynamically populated from script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Buyer Signup Modal -->
+    <div id="buyer-signup-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-modal" onclick="closeBuyerSignupModal()">&times;</span>
+            <h3 style="margin-bottom: 1rem; color: var(--accent-color); text-shadow: 0px 1px 1px rgba(0,0,0,0.1);">
+                Create Buyer Profile</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">Get fresh farm produce delivered to your doorstep.</p>
+            <form onsubmit="handleBuyerSignup(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Full Name</label>
+                    <input type="text" id="signup-buyer-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>State</label>
+                    <select id="signup-buyer-state" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                        <option value="" disabled selected>Select State</option>
+                        <option value="Abia">Abia</option>
+                        <option value="Adamawa">Adamawa</option>
+                        <option value="Akwa Ibom">Akwa Ibom</option>
+                        <option value="Anambra">Anambra</option>
+                        <option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="FCT - Abuja">FCT - Abuja</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nasarawa">Nasarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamfara</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Street Address</label>
+                    <input type="text" id="signup-buyer-location" placeholder="e.g. 123 Main St, Lagos" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Password</label>
+                    <input type="password" id="signup-buyer-password" placeholder="Create a password" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Profile Picture</label>
+                    <div style="border: 2px dashed #ddd; padding: 1.5rem; text-align: center; border-radius: 8px; cursor: pointer;"
+                        onclick="document.getElementById('signup-buyer-pic').click()">
+                        <i class="fa-solid fa-cloud-arrow-up"
+                            style="font-size: 2rem; color: #aaa; margin-bottom: 0.5rem;"></i>
+                        <p style="color: #666; font-size: 0.9rem;">Click to upload image</p>
+                        <input type="file" id="signup-buyer-pic" style="display: none" accept="image/*"
+                            onchange="alert('Image selected: ' + this.files[0].name)">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="width: 100%; color: #333;">Create Buyer
+                    Account</button>
+                <button type="button" class="btn"
+                    style="width: 100%; margin-top: 1rem; border: 1px solid #ddd; justify-content: center; background: #f9f9f9; color: #666;"
+                    onclick="closeBuyerSignupModal()">
+                    Cancel & Close
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Farmer Signup Modal -->
+    <div id="farmer-signup-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-modal" onclick="closeFarmerSignupModal()">&times;</span>
+            <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Create Farmer Profile</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">Join our network to access all farming tools.</p>
+            <form onsubmit="handleFarmerSignup(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Full Name</label>
+                    <input type="text" id="farmer-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Password</label>
+                    <input type="password" id="farmer-password" placeholder="Create a password" required>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <div class="form-group" style="flex: 1; margin-bottom: 1rem;">
+                        <label>Account Number (Bank)</label>
+                        <input type="number" id="farmer-account" placeholder="0123456789" required>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 1rem;">
+                        <label>Location</label>
+                        <select id="farmer-location" required>
+                            <option value="" disabled selected>Select State</option>
+                            <option value="Abia">Abia</option>
+                            <option value="Adamawa">Adamawa</option>
+                            <option value="Akwa Ibom">Akwa Ibom</option>
+                            <option value="Anambra">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Bayelsa">Bayelsa</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Borno">Borno</option>
+                            <option value="Cross River">Cross River</option>
+                            <option value="Delta">Delta</option>
+                            <option value="Ebonyi">Ebonyi</option>
+                            <option value="Edo">Edo</option>
+                            <option value="Ekiti">Ekiti</option>
+                            <option value="Enugu">Enugu</option>
+                            <option value="FCT - Abuja">FCT - Abuja</option>
+                            <option value="Gombe">Gombe</option>
+                            <option value="Imo">Imo</option>
+                            <option value="Jigawa">Jigawa</option>
+                            <option value="Kaduna">Kaduna</option>
+                            <option value="Kano">Kano</option>
+                            <option value="Katsina">Katsina</option>
+                            <option value="Kebbi">Kebbi</option>
+                            <option value="Kogi">Kogi</option>
+                            <option value="Kwara">Kwara</option>
+                            <option value="Lagos">Lagos</option>
+                            <option value="Nasarawa">Nasarawa</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Ogun">Ogun</option>
+                            <option value="Ondo">Ondo</option>
+                            <option value="Osun">Osun</option>
+                            <option value="Oyo">Oyo</option>
+                            <option value="Plateau">Plateau</option>
+                            <option value="Rivers">Rivers</option>
+                            <option value="Sokoto">Sokoto</option>
+                            <option value="Taraba">Taraba</option>
+                            <option value="Yobe">Yobe</option>
+                            <option value="Zamfara">Zamfara</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Agricultural Activities</label>
+                    <textarea id="farmer-activities" placeholder="e.g. Maize Farming, Poultry, Cattle Rearing..."
+                        rows="2" style="font-family: inherit;"></textarea>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Profile Picture</label>
+                    <div style="border: 2px dashed #ddd; padding: 1.5rem; text-align: center; border-radius: 8px; cursor: pointer;"
+                        onclick="document.getElementById('farmer-pic').click()">
+                        <i class="fa-solid fa-cloud-arrow-up"
+                            style="font-size: 2rem; color: #aaa; margin-bottom: 0.5rem;"></i>
+                        <p style="color: #666; font-size: 0.9rem;">Click to upload image</p>
+                        <input type="file" id="farmer-pic" style="display: none" accept="image/*"
+                            onchange="alert('Image selected: ' + this.files[0].name)">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                <button type="button" class="btn"
+                    style="width: 100%; margin-top: 1rem; border: 1px solid #ddd; justify-content: center; background: #f9f9f9; color: #666;"
+                    onclick="closeFarmerSignupModal()">
+                    Cancel & Close
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Schedule Modal -->
+    <div id="schedule-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-modal" onclick="closeScheduleModal()">&times;</span>
+            <h3 style="margin-bottom: 1rem; color: #6a1b9a;">Add New Schedule</h3>
+            <form id="schedule-form" onsubmit="handleAddSchedule(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Task Type</label>
+                    <select id="sched-type" required>
+                        <option value="Fertilizer">Fertilizer Application</option>
+                        <option value="Pesticide">Pesticide Spray</option>
+                        <option value="Irrigation">Irrigation</option>
+                        <option value="Other">Other Maintenance</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Task Title</label>
+                    <input type="text" id="sched-title" placeholder="e.g. Apply Pesticide" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Details / Area</label>
+                    <input type="text" id="sched-details" placeholder="e.g. Maize Field B" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Date</label>
+                    <input type="date" id="sched-date" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Priority</label>
+                    <select id="sched-priority">
+                        <option value="normal">Normal</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; background: #6a1b9a;">Save
+                    Schedule</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Vaccine Reminder Modal -->
+    <div id="vaccine-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-modal" onclick="closeVaccineModal()">&times;</span>
+            <h3 style="margin-bottom: 1rem; color: #d32f2f;"><i class="fa-solid fa-syringe"></i> Add Vaccine Reminder
+            </h3>
+            <form onsubmit="handleAddVaccine(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Animal / Herd</label>
+                    <input type="text" id="vac-animal" placeholder="e.g. Dairy Cows (Herd A)" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Reason / Vaccine Name</label>
+                    <input type="text" id="vac-reason" placeholder="e.g. Foot & Mouth, Deworming..." required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Vaccination Date</label>
+                    <input type="date" id="vac-date" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; background: #d32f2f;">Set
+                    Reminder</button>
+            </form>
+        </div>
+    </div>
+    <!-- Buyer Upload Contact Card Modal -->
+    <!-- Buyer Upload Contact Card Modal -->
+    <div id="buyer-upload-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 380px; padding: 1.2rem;">
+            <button type="button" onclick="closeBuyerUploadModal()"
+                style="position: absolute; top: 0.8rem; right: 0.8rem; background: #fff5f5; color: #e53e3e; border: 1px solid #feb2b2; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.65rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; z-index: 10;"
+                onmouseover="this.style.background='#fed7d7'" onmouseout="this.style.background='#fff5f5'">
+                Exit Form <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div style="text-align: center; margin-bottom: 0.8rem;">
+                <i class="fa-solid fa-address-card"
+                    style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 0.2rem;"></i>
+                <h3 style="color: var(--primary-dark); font-size: 1.1rem;">Submit Contact Card</h3>
+            </div>
+
+            <form onsubmit="handleBuyerContactUpload(event)">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.5rem;">
+                    <div class="form-group">
+                        <label style="font-size: 0.75rem;">Business Name</label>
+                        <input type="text" id="buyer-business-name" placeholder="Name" required
+                            style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 0.75rem;">Contact Person</label>
+                        <input type="text" id="buyer-contact-person" placeholder="Full Name" required
+                            style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.5rem;">
+                    <div class="form-group">
+                        <label style="font-size: 0.75rem;">Phone Number</label>
+                        <input type="tel" id="buyer-phone" placeholder="Phone" required
+                            style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 0.75rem;">Email Address</label>
+                        <input type="email" id="buyer-email" placeholder="Email" required
+                            style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.5rem;">
+                    <div class="form-group">
+                        <label style="font-size: 0.75rem;">State</label>
+                        <select id="buyer-state" required
+                            style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+                            <option value="" disabled selected>Select</option>
+                            <option value="Abia">Abia</option>
+                            <option value="Adamawa">Adamawa</option>
+                            <option value="Akwa Ibom">Akwa Ibom</option>
+                            <option value="Anambra">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Bayelsa">Bayelsa</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Borno">Borno</option>
+                            <option value="Cross River">Cross River</option>
+                            <option value="Delta">Delta</option>
+                            <option value="Ebonyi">Ebonyi</option>
+                            <option value="Edo">Edo</option>
+                            <option value="Ekiti">Ekiti</option>
+                            <option value="Enugu">Enugu</option>
+                            <option value="FCT - Abuja">FCT - Abuja</option>
+                            <option value="Gombe">Gombe</option>
+                            <option value="Imo">Imo</option>
+                            <option value="Jigawa">Jigawa</option>
+                            <option value="Kaduna">Kaduna</option>
+                            <option value="Kano">Kano</option>
+                            <option value="Katsina">Katsina</option>
+                            <option value="Kebbi">Kebbi</option>
+                            <option value="Kogi">Kogi</option>
+                            <option value="Kwara">Kwara</option>
+                            <option value="Lagos">Lagos</option>
+                            <option value="Nasarawa">Nasarawa</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Ogun">Ogun</option>
+                            <option value="Ondo">Ondo</option>
+                            <option value="Osun">Osun</option>
+                            <option value="Oyo">Oyo</option>
+                            <option value="Plateau">Plateau</option>
+                            <option value="Rivers">Rivers</option>
+                            <option value="Sokoto">Sokoto</option>
+                            <option value="Taraba">Taraba</option>
+                            <option value="Yobe">Yobe</option>
+                            <option value="Zamfara">Zamfara</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 0.75rem;">Business Type</label>
+                        <select id="buyer-type" required
+                            style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+                            <option value="" disabled selected>Type...</option>
+                            <option value="Supermarket">Supermarket</option>
+                            <option value="Restaurant">Restaurant</option>
+                            <option value="Wholesaler">Wholesaler</option>
+                            <option value="Food Processor">Food Processor</option>
+                            <option value="Export Company">Export Company</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0.5rem;">
+                    <label style="font-size: 0.75rem;">Street Address</label>
+                    <input type="text" id="buyer-address" placeholder="123 Main St" required
+                        style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0.8rem;">
+                    <label style="font-size: 0.75rem;">Products Interested In</label>
+                    <textarea id="buyer-products" placeholder="e.g. Vegetables, Grains..." rows="1"
+                        style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 0.8rem;"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;">
+                    Submit Contact Card
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Budget Goal Modal -->
+    <div id="budget-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 450px;">
+            <span class="close-modal" onclick="closeBudgetModal()">&times;</span>
+            <h3 style="margin-bottom: 1rem; color: var(--primary-dark);"><i class="fa-solid fa-bullseye"></i> Create
+                Budget Goal</h3>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Set a target amount for a specific
+                category of expenses.</p>
+            <form onsubmit="handleBudgetSubmit(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Budget Name / Category</label>
+                    <input type="text" id="budget-category" placeholder="e.g. Fertilizer, Seeds, Labor" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Target Amount (₦)</label>
+                    <input type="number" id="budget-target" placeholder="₦" required min="1"
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="button" class="btn btn-outline" style="flex: 1; justify-content: center;"
+                        onclick="closeBudgetModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex: 2; justify-content: center;">
+                        <i class="fa-solid fa-plus"></i> Set Budget Goal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 450px;">
+            <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="color: var(--primary-dark);">Welcome Back</h3>
+                <p style="color: #666;">Select your account type to login</p>
+            </div>
+
+            <!-- Login Tabs -->
+            <div style="display: flex; background: #f5f5f5; border-radius: 8px; padding: 4px; margin-bottom: 2rem;">
+                <button id="tab-farmer" onclick="switchLoginTab('farmer')"
+                    style="flex: 1; padding: 0.8rem; border: none; background: white; border-radius: 6px; font-weight: bold; color: var(--primary-color); box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;">Farmer</button>
+                <button id="tab-customer" onclick="switchLoginTab('customer')"
+                    style="flex: 1; padding: 0.8rem; border: none; background: transparent; border-radius: 6px; color: #666; cursor: pointer;">Customer</button>
+            </div>
+
+            <!-- Farmer Login Form -->
+            <form id="form-login-farmer" onsubmit="handleLogin(event, 'Farmer')">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Farmer Name / ID</label>
+                    <input type="text" placeholder="Enter your username" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Password</label>
+                    <input type="password" placeholder="" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login as Farmer</button>
+            </form>
+
+            <!-- Customer Login Form -->
+            <form id="form-login-customer" onsubmit="handleLogin(event, 'Customer')" style="display: none;">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Customer Email / Name</label>
+                    <input type="text" placeholder="Enter your email" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Password</label>
+                    <input type="password" placeholder="" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <button type="submit" class="btn btn-accent" style="width: 100%; color: #333;">Login as
+                    Customer</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Growth Tracker Modal -->
+    <div id="growth-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 800px;">
+            <span class="close-modal" onclick="closeGrowthModal()">&times;</span>
+            <h3 style="margin-bottom: 2rem; color: #00695c;">Growth Details & Analysis</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Left: Input Form -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #555;">Update Growth Data</h4>
+                    <form onsubmit="handleGrowthUpdate(event)">
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label>Select Batch / Field</label>
+                            <select id="growth-batch" required>
+                                <option value="Maize Field A">Maize Field A</option>
+                                <option value="Cattle Herd B">Cattle Herd B</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label>Current Height / Weight</label>
+                            <input type="text" id="growth-metric" placeholder="e.g. 1.2m or 200kg" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label>Observation Date</label>
+                            <input type="date" id="growth-date" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label>Notes (Health, Appearance)</label>
+                            <textarea id="growth-notes" rows="3"
+                                placeholder="e.g. Leaves represent healthy green color"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Progress</button>
+                    </form>
+                </div>
+
+                <!-- Right: Results & Improvements -->
+                <div style="background: #f1f8e9; padding: 1.5rem; border-radius: 8px; border: 1px solid #c8e6c9;">
+                    <h4 style="margin-bottom: 1rem; color: #2e7d32;"><i class="fa-solid fa-chart-line"></i> Results &
+                        Improvements</h4>
+                    <div id="growth-results-content">
+                        <p style="color: #666; font-style: italic;">Enter data on the left to see analysis here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AgroMall Responses Modal -->
+    <div id="mall-responses-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-modal" onclick="closeMallResponsesModal()">&times;</span>
+            <h3 style="margin-bottom: 1.5rem; color: var(--primary-dark);"><i class="fa-solid fa-inbox"></i> Broadcast
+                Responses</h3>
+            <div id="mall-responses-container"
+                style="max-height: 350px; overflow-y: auto; padding-right: 0.5rem; margin-bottom: 1.5rem;">
+                <!-- Responses will appear here -->
+            </div>
+            <!-- Chat Input for Replies -->
+            <form id="mall-chat-form" onsubmit="handleMallChat(event)"
+                style="display: flex; gap: 0.5rem; border-top: 1px solid #eee; padding-top: 1rem;">
+                <input type="hidden" id="current-request-id">
+                <input type="text" id="mall-chat-input" placeholder="Type your reply here..." required
+                    style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 20px; outline: none;">
+                <button type="submit" class="btn btn-primary" style="padding: 0.8rem 1.2rem; border-radius: 50%;">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Post Produce Modal -->
+    <div id="produce-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px; background: #f1f8e9;">
+            <span class="close-modal" onclick="closeProduceModal()">&times;</span>
+            <h3
+                style="margin-bottom: 1.5rem; color: var(--primary-dark); display: flex; align-items: center; gap: 0.8rem;">
+                <i class="fa-solid fa-basket-shopping"></i> Post Your Produce
+            </h3>
+            <form onsubmit="handlePostProduce(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Item Name</label>
+                    <input type="text" id="produce-item" placeholder="e.g. Fresh Tomatoes" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #c8e6c9; border-radius: 8px;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="text" id="produce-qty" placeholder="e.g. 50 kg" required
+                            style="width: 100%; padding: 0.8rem; border: 1px solid #c8e6c9; border-radius: 8px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Price (₦)</label>
+                        <input type="number" id="produce-price" placeholder="Amount" required
+                            style="width: 100%; padding: 0.8rem; border: 1px solid #c8e6c9; border-radius: 8px;">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Location (State)</label>
+                    <select id="produce-loc" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid #c8e6c9; border-radius: 8px;">
+                        <option value="" disabled selected>Select State</option>
+                        <option value="Abia">Abia</option>
+                        <option value="Adamawa">Adamawa</option>
+                        <option value="Akwa Ibom">Akwa Ibom</option>
+                        <option value="Anambra">Anambra</option>
+                        <option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="FCT - Abuja">FCT - Abuja</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nasarawa">Nasarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamfara</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Product Image (Optional)</label>
+                    <div
+                        style="border: 2px dashed #c8e6c9; padding: 1.5rem; text-align: center; border-radius: 8px; background: white; cursor: pointer;">
+                        <i class="fa-solid fa-camera"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem; display: block;"></i>
+                        <span style="font-size: 0.8rem; color: #666;">Click to upload photos of your stock</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; border-radius: 12px; padding: 1rem; font-weight: bold;">
+                    List My Produce for Sale
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Page Navigation (Right Side) -->
+    <div class="page-navigation-menu glass-panel">
+        <button onclick="navigatePage('prev')" class="nav-btn prev" title="Previous Section">
+            <i class="fa-solid fa-chevron-up"></i>
+            <span>Previous</span>
+        </button>
+        <div class="nav-divider"></div>
+        <button onclick="navigatePage('next')" class="nav-btn next" title="Next Section">
+            <span>Next</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <!-- Global Chicken AI Assistant -->
+    <div id="chicken-ai" class="chicken-container" onclick="greetUser()">
+        <div class="chicken-badge">Click me!</div>
+        <div class="chicken-avatar">
+            <img src="https://cdn-icons-png.flaticon.com/512/2632/2632592.png" alt="Chicken AI" id="chicken-img"
+                style="transform: scale(1.1);">
+        </div>
+        <div id="chicken-bubble" class="chicken-speech-bubble">
+            <p id="chicken-text">Cluck! Click me to learn about AgroGuard!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
